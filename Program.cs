@@ -54,21 +54,21 @@ namespace dzz12
                         counter = Convert.ToInt32(Console.ReadLine());
                     }
                     break;
-                    case 3:
+                    case 4:
                     Console.Write("id = ");
                     int iD = Convert.ToInt32(Console.ReadLine());
-                    string sqlExpression2 = $"select * from Personn where id in '{iD}'";
-                    using (SqlConnection connection2 = new SqlConnection(connectionString))
+                    string  sqlExpressionn = $"Select * from Personn where Personn.Id = {iD}";
+                    using (SqlConnection connectionn = new SqlConnection(connectionString))
                     {
-                        connection2.Open();
-                        SqlCommand command2 = new SqlCommand(sqlExpression2, connection2);
-                        SqlDataReader reader1  = command2.ExecuteReader();
-                        while (reader1.Read()) Console.WriteLine($"ID: {reader1.GetValue(0)}, Firstname:{reader1.GetValue(1)}, LastName:{reader1.GetValue(2)}, MiddleName:{reader1.GetValue(3)}, BirthDate:{reader1.GetValue(4)}");
+                        connectionn.Open();
+                        SqlCommand commandd = new SqlCommand(sqlExpressionn, connectionn);
+                        SqlDataReader reader1  = commandd.ExecuteReader();
+                        Console.WriteLine($"ID: {reader1.GetValue(0)}, Firstname:{reader1.GetValue(1)}, LastName:{reader1.GetValue(2)}, MiddleName:{reader1.GetValue(3)}, BirthDate:{reader1.GetValue(4)}");
                         Console.Write("Select a command = ");
                         counter = Convert.ToInt32(Console.ReadLine());
                     }
                     break;
-                    case 4:
+                    case 3:
                     Console.Write("id = ");
                     int i = Convert.ToInt32(Console.ReadLine());
                     string sqlExpression3 = $"DELETE  FROM Personn WHERE Id ='{i}'";
@@ -158,10 +158,8 @@ namespace dzz12
                             counter = Convert.ToInt32(Console.ReadLine());
                             }
                         break;
-                        default: Console.WriteLine("Неправильная команда!");
                     }
                     break;
-                    
                 }
             }
         }
