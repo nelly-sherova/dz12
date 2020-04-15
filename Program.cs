@@ -82,6 +82,86 @@ namespace dzz12
                     counter = Convert.ToInt32(Console.ReadLine());
                     }
                     break;
+                    case 5:
+                    Console.WriteLine("Choose line: \n 1->FirstName \n 2->LastName \n 3->MiddleName \n 4-> BirthDate");
+                    int line = Convert.ToInt32(Console.ReadLine());
+                    switch (line)
+                    {
+                        case 1: 
+                            Console.Write("Firstname: "); string name = Console.ReadLine();
+                            Console.Write("new FirstName: "); string name1 = Console.ReadLine();
+                            string sqlExpression4 = $"UPDATE Personn SET FirstName = '{name1}'  WHERE FirstName ='{name}'";
+                            using (SqlConnection connection4 = new SqlConnection(connectionString))
+                            {
+                            connection4.Open();
+                            SqlCommand command4 = new SqlCommand(sqlExpression4, connection4);
+                            int number2 = command4.ExecuteNonQuery();
+                            Console.WriteLine("Обновлено объектов: {0}", number2);
+                            Console.Write("Select a command = ");
+                            counter = Convert.ToInt32(Console.ReadLine());
+                            }
+                        break;
+                        case 2: 
+                            Console.Write("Lastname: "); string surname = Console.ReadLine();
+                            Console.Write("new LastName: "); string surname1 = Console.ReadLine();
+                            string sqlExpression42 = $"UPDATE Personn SET LastName = '{surname1}'  WHERE LastName ='{surname}'";
+                            using (SqlConnection connection42 = new SqlConnection(connectionString))
+                            {
+                            connection42.Open();
+                            SqlCommand command42 = new SqlCommand(sqlExpression42, connection42);
+                            int number22 = command42.ExecuteNonQuery();
+                            Console.WriteLine("Обновлено объектов: {0}", number22);
+                            Console.Write("Select a command = ");
+                            counter = Convert.ToInt32(Console.ReadLine());
+                            }
+                        break;
+                        case 3: 
+                            Console.Write("Middlename: "); string midname = Console.ReadLine();
+                            Console.Write("new MiddleName: "); string midname1 = Console.ReadLine();
+                            string sqlExpression43 = $"UPDATE Personn SET MiddleName = '{midname1}'  WHERE MiddleName ='{midname}'";
+                            using (SqlConnection connection43 = new SqlConnection(connectionString))
+                            {
+                            connection43.Open();
+                            SqlCommand command43 = new SqlCommand(sqlExpression43, connection43);
+                            int number23 = command43.ExecuteNonQuery();
+                            Console.WriteLine("Обновлено объектов: {0}", number23);
+                            Console.Write("Select a command = ");
+                            counter = Convert.ToInt32(Console.ReadLine());
+                            }
+                        break;
+                        case 4: 
+                            Console.Write("BirthDate: "); 
+                            Console.Write("Day of Birth (format: dd): ");
+                            string day1 = Console.ReadLine();
+                            Console.Write("Month Of Birth (format: MM): ");
+                            string month1 = Console.ReadLine();
+                            Console.Write("Year of Birth (format:YYYY): ");
+                            string year1 = Console.ReadLine();
+                            string Birthdate1 = day1+"."+month1+"."+year1;
+                            Console.Write("New BirthDate: "); 
+                            Console.Write("Day of Birth (format: dd): ");
+                            string day2 = Console.ReadLine();
+                            Console.Write("Month Of Birth (format: MM): ");
+                            string month2 = Console.ReadLine();
+                            Console.Write("Year of Birth (format:YYYY): ");
+                            string year2 = Console.ReadLine();
+                            string Birthdate2 = day2+"."+month2+"."+year2;
+
+                            string sqlExpression44 = $"UPDATE Personn SET BirthDate = '{Birthdate2}' Where  BirthDate ='{Birthdate1}'";
+                            using (SqlConnection connection44 = new SqlConnection(connectionString))
+                            {
+                            connection44.Open();
+                            SqlCommand command44 = new SqlCommand(sqlExpression44, connection44);
+                            int number24 = command44.ExecuteNonQuery();
+                            Console.WriteLine("Обновлено объектов: {0}", number24);
+                            Console.Write("Select a command = ");
+                            counter = Convert.ToInt32(Console.ReadLine());
+                            }
+                        break;
+                        default: Console.WriteLine("Неправильная команда!");
+                    }
+                    break;
+                    
                 }
             }
         }
