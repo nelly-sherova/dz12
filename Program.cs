@@ -11,7 +11,7 @@ namespace dzz12
             const string connectionString = @"Data source=NILUFARSHEROVA; Initial catalog=Person; Integrated Security = True";
             SqlConnection con = new SqlConnection(connectionString);
             int counter;
-            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4 \nDelete -> 5 \nExit ->0");
+            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
             Console.Write("Select a command = ");
             counter = Convert.ToInt32(Console.ReadLine());
             while (counter != 0 )
@@ -38,7 +38,7 @@ namespace dzz12
                             int number = command.ExecuteNonQuery();
                             Console.WriteLine("Добавлено объектов: {0}", number);
                             Console.Write("Select a command = ");
-                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
+                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                             counter = Convert.ToInt32(Console.ReadLine());
                         }
                     }
@@ -52,7 +52,7 @@ namespace dzz12
                         SqlDataReader reader  = command1.ExecuteReader();
                         while (reader.Read()) Console.WriteLine($"ID: {reader.GetValue(0)}, Firstname:{reader.GetValue(1)} | LastName:{reader.GetValue(2)} | MiddleName:{reader.GetValue(3)} | BirthDate:{reader.GetValue(4)}");
                         Console.Write("Select a command = ");
-                        Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4\nDelete -> 5 \nExit ->0");
+                        Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                         counter = Convert.ToInt32(Console.ReadLine());
                     }
                     break;
@@ -70,7 +70,7 @@ namespace dzz12
                         Console.WriteLine($"id :{reader1.GetValue("Id")} | {reader1.GetValue("FirstName")} | {reader1.GetValue("LastName")} | {reader1.GetValue("MiddleName")} | {reader1.GetValue("BirthDate")}");
                         }
                         Console.Write("Select a command = ");
-                        Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4 \nDelete -> 5 \nExit ->0");
+                        Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                         counter = Convert.ToInt32(Console.ReadLine());
                     }
                     break;
@@ -85,7 +85,7 @@ namespace dzz12
                     int number1 = command3.ExecuteNonQuery();
                     Console.WriteLine("Удалено объектов: {0}", number1);
                     Console.Write("Select a command = ");
-                    Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4 \nDelete -> 5 \nExit ->0");
+                    Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                     counter = Convert.ToInt32(Console.ReadLine());
                     }
                     break;
@@ -105,7 +105,7 @@ namespace dzz12
                             int number2 = command4.ExecuteNonQuery();
                             Console.WriteLine("Обновлено объектов: {0}", number2);
                             Console.Write("Select a command = ");
-                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4 \nDelete -> 5 \nExit ->0");
+                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                             counter = Convert.ToInt32(Console.ReadLine());
                             }
                         break;
@@ -120,7 +120,7 @@ namespace dzz12
                             int number22 = command42.ExecuteNonQuery();
                             Console.WriteLine("Обновлено объектов: {0}", number22);
                             Console.Write("Select a command = ");
-                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4 \nDelete -> 5 \nExit ->0");
+                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                             counter = Convert.ToInt32(Console.ReadLine());
                             }
                         break;
@@ -135,7 +135,7 @@ namespace dzz12
                             int number23 = command43.ExecuteNonQuery();
                             Console.WriteLine("Обновлено объектов: {0}", number23);
                             Console.Write("Select a command = ");
-                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4 \nDelete -> 5 \nExit ->0");
+                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                             counter = Convert.ToInt32(Console.ReadLine());
                             }
                         break;
@@ -164,7 +164,7 @@ namespace dzz12
                             int number24 = command44.ExecuteNonQuery();
                             Console.WriteLine("Обновлено объектов: {0}", number24);
                             Console.Write("Select a command = ");
-                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->3 \nUpdate - > 4 \nDelete -> 5 \nExit ->0");
+                            Console.WriteLine("Insert -> 1 \nSelect All -> 2 \nSelect by Id ->4 \nUpdate - > 5 \nDelete -> 3 \nExit ->0");
                             counter = Convert.ToInt32(Console.ReadLine());
                             }
                         break;
