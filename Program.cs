@@ -30,7 +30,7 @@ namespace dzz12
                         Console.Write("Year of Birth (format:YYYY): ");
                         string year = Console.ReadLine();
                         string Birthdate = day+"."+month+"."+year;
-                        string sqlExpression = $"INSERT INTO TablePerson ([FirstName],[LastName], [MiddleName], [BirthDate]) VALUES ( '{FN}', '{LN}', '{MN}' , '{Birthdate}')";
+                        string sqlExpression = $"INSERT INTO Personn ([FirstName],[LastName], [MiddleName], [BirthDate]) VALUES ( '{FN}', '{LN}', '{MN}' , '{Birthdate}')";
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
                             connection.Open();
@@ -42,6 +42,22 @@ namespace dzz12
                         }
                     }
                     break;
+                    case 2:
+                    string sqlExpression1 = "SELECT * FROM Personn";
+                    using (SqlConnection connection1 = new SqlConnection(connectionString))
+                    {
+                        connection1.Open();
+                        SqlCommand command1 = new SqlCommand(sqlExpression1, connection1);
+                        SqlDataReader reader  = command1.ExecuteReader();
+                        while (reader.Read()) Console.WriteLine($"ID: {reader.GetValue(0)}, Firstname:{reader.GetValue(1)}, LastName:{reader.GetValue(2)}, MiddleName:{reader.GetValue(3)}, BirthDate:{reader.GetValue(4)}");
+                        Console.Write("Select a command = ");
+                        counter = Convert.ToInt32(Console.ReadLine());
+                    }
+                    break;
+                    case 3:
+                    Console.Write("id = ");
+                    int iD = Convert.ToInt32(Console.ReadLine());
+                    string sqlExpression2 = $"select * from table where id in '{iD}'";
                 }
             }
         }
