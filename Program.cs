@@ -62,10 +62,11 @@ namespace dzz12
                     {
                         connectionn.Open();
                         SqlCommand commandd = new SqlCommand(sqlExpressionn, connectionn);
-                        SqlDataReader reader1  = commandd.ExecuteReader();
-                        Console.WriteLine($"ID: {reader1.GetValue(0)}, Firstname:{reader1.GetValue(1)}, LastName:{reader1.GetValue(2)}, MiddleName:{reader1.GetValue(3)}, BirthDate:{reader1.GetValue(4)}");
-                        Console.Write("Select a command = ");
-                        counter = Convert.ToInt32(Console.ReadLine());
+                        var reader1 = commandd.ExecuteReader();
+                        while (reader1.Read())
+                        {
+                        Console.WriteLine($"id :{reader1.GetValue("Id")} | {reader1.GetValue("FirstName")} , {reader1.GetValue("LastName")} , {reader1.GetValue("MiddleName")} , {reader1.GetValue("BirthDate")}");
+                        }
                     }
                     break;
                     case 3:
